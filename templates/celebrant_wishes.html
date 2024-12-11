@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ celebrant.name }}'s Wishes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="balloons-background">
+    <div class="container">
+        <h1>Wishes for {{ celebrant.name }}</h1>
+
+        {% if wishes %}
+            <ul class="wish-list">
+                {% for wish in wishes %}
+                    <li class="wish-item">
+                        <strong>{{ wish.well_wisher_name }}</strong>: {{ wish.message }}
+                        
+                        {% if wish.image_path %}
+                            <div class="wish-images">
+                                <h4>Uploaded Images:</h4>
+                                <ul class="image-list">
+                                    {% for image in wish.image_path.split(',') %}
+                                        <li>
+                                            <img src="{{ image }}" alt="Uploaded image from {{ wish.well_wisher_name }}" class="wish-image">
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No wishes yet!</p>
+        {% endif %}
+
+        <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+
+</body>
+
+</html>

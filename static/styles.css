@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font for a birthday theme */
+    background-color: #f0f0f0; /* Light gray background */
+    background-image: url('/static/images/balloons.jpg'); /* Add your balloon image path */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #b0b0b0; /* Neutral gray border */
+}
+
+h1 {
+    text-align: center;
+    color: #008080; /* Teal for headings */
+    font-size: 2.5em; /* Larger font size for emphasis */
+}
+
+p {
+    color: #333;
+    text-align: center;
+}
+
+/* Button Styling */
+.copy-button, .send-button, .back-button {
+    padding: 10px 15px;
+    background-color: #008080; /* Teal button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover, .send-button:hover, .back-button:hover {
+    background-color: #006666; /* Darker teal on hover */
+}
+
+.copy-button:focus, .send-button:focus, .back-button:focus {
+    outline: 2px solid #006666; /* Focus outline for accessibility */
+}
+
+/* Social Media Buttons */
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* WhatsApp green */
+}
+
+.instagram-button {
+    background-color: #E1306C; /* Instagram pink */
+}
+
+.social-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Link Container */
+.link-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.link-container input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #008080; /* Teal border for input */
+}
+
+.note {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+/* Action Buttons */
+.action-button {
+    padding: 10px 20px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.action-button:hover {
+    background-color: #006666;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    padding: 20px;
+    border: 2px solid #008080;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+legend {
+    font-size: 1.2em;
+    color: #008080;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #008080;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Image Preview */
+input[type="file"] {
+    padding: 5px 0;
+}
+
+/* Back Link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #008080;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Wish List Styles */
+.wish-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wish-item {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wish-images {
+    margin-top: 10px;
+}
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wish-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    /* Mobile styling */
+    .container {
+        padding: 10px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .copy-button, .send-button, .back-button, .action-button {
+        width: 100%;
+    }
+
+    .wish-image {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .link-container {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+}
+
+/* Balloons Background */
+.balloons-background {
+    background-image: url('/static/images/balloons.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

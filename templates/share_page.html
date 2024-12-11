@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Birthday Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="balloons-background">
+    <div class="container">
+        <h1>Share Your Birthday Page!</h1>
+        <p>Copy the link below to share with your friends:</p>
+        <div class="link-container">
+            <input type="text" value="{{ link }}" readonly aria-label="Birthday Page Link">
+            <button class="copy-button" onclick="navigator.clipboard.writeText('{{ link }}')" aria-label="Copy to Clipboard">Copy to Clipboard</button>
+        </div>
+
+        <h2>Share on Social Media:</h2>
+        <div class="social-buttons">
+            <button class="social-button whatsapp-button" onclick="shareOnWhatsApp('{{ link }}')" aria-label="Share on WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="20" height="20">
+                Share on WhatsApp
+            </button>
+            <button class="social-button instagram-button" onclick="shareOnInstagram('{{ link }}')" aria-label="Share on Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="20" height="20">
+                Share on Instagram
+            </button>
+        </div>
+
+        <h2>Send Your Wishes:</h2>
+        <button class="action-button" onclick="window.location.href='/wish/{{ link }}'">Go to Wishers Page</button>
+
+        <h2>View Your Wishes:</h2>
+        <button class="action-button" onclick="window.location.href='/celebrant/{{ link }}'">View Wishes</button>
+
+        <script>
+            function shareOnWhatsApp(link) {
+                const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(link)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            function shareOnInstagram(link) {
+                alert("To share on Instagram, please copy the link and paste it in your Instagram story or message.");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

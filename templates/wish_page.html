@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Your Wishes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="balloons-background">
+    <div class="container">
+        <h1>Send Your Wishes!</h1>
+        <p>Share your heartfelt wishes for the celebrant.</p>
+
+        <form action="/wish/{{ link }}" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Send your wish</legend>
+
+                <label for="wisher_name">Your Name:</label>
+                <input type="text" id="wisher_name" name="wisher_name" placeholder="Enter your name" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message" required rows="4"></textarea>
+
+                <label for="images">Upload Images (up to 3):</label>
+                <input type="file" id="images" name="images" multiple accept="image/png, image/jpeg, image/gif">
+
+                <button type="submit" class="send-button">Send Wish</button>
+            </fieldset>
+        </form>
+
+        <p class="note">You can upload up to 3 images.</p>
+    </div>
+</body>
+
+</html>

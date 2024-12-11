@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration Website</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+
+<body class="balloons-background">
+    <div class="container">
+        <h1>Welcome to the Birthday Celebration Website!</h1>
+        <p>Enter your name and birthdate to start the celebration!</p>
+        
+        <form action="/celebrant" method="post">
+            <fieldset>
+                <legend>Tell Us About You</legend>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="birthdate">Your Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+
+                <button type="submit">Start Celebration</button>
+            </fieldset>
+        </form>
+
+        <div class="note">
+            <p>After submitting, you'll get a unique link to share with your friends and family for birthday wishes!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p class="back-link">
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+</body>
+
+</html>
