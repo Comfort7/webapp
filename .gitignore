@@ -34,3 +34,5 @@ build/
 *.tmp
 *.old
 *.out
+
+.codegpt
